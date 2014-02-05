@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C89EE831-58A0-461D-B0CA-9951077D5153}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sphero</RootNamespace>
+    <AssemblyName>Sphero</AssemblyName>
+    <DefaultLanguage>fr-FR</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Sphero\Collisions\CollisionData.cs">
+      <Link>Collisions\CollisionData.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Collisions\CollisionMethod.cs">
+      <Link>Collisions\CollisionMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\AsynchronousId.cs">
+      <Link>Communication\AsynchronousId.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\AsyncResponsePacket.cs">
+      <Link>Communication\AsyncResponsePacket.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\BluetoothDeactivatedException.cs">
+      <Link>Communication\BluetoothDeactivatedException.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\CommandPacket.cs">
+      <Link>Communication\CommandPacket.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\MessageResponseCode.cs">
+      <Link>Communication\MessageResponseCode.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\NoSpheroFoundException.cs">
+      <Link>Communication\NoSpheroFoundException.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\ResponsePacket.cs">
+      <Link>Communication\ResponsePacket.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\SpheroConnection.cs">
+      <Link>Communication\SpheroConnection.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\SpheroConnectionProvider.cs">
+      <Link>Communication\SpheroConnectionProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Communication\SpheroInformation.cs">
+      <Link>Communication\SpheroInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Controls\JoystickCalibrationEventArgs.cs">
+      <Link>Controls\JoystickCalibrationEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Controls\JoystickMoveEventArgs.cs">
+      <Link>Controls\JoystickMoveEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Core\BluetoothInformation.cs">
+      <Link>Core\BluetoothInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Core\CommandIDs.cs">
+      <Link>Core\CommandIDs.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Core\DeviceIDs.cs">
+      <Link>Core\DeviceIDs.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Core\DeviceMode.cs">
+      <Link>Core\DeviceMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Core\MotorMode.cs">
+      <Link>Core\MotorMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Core\PowerInformation.cs">
+      <Link>Core\PowerInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Core\PowerState.cs">
+      <Link>Core\PowerState.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Core\SpheroVersion.cs">
+      <Link>Core\SpheroVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Core\StabilizationStatus.cs">
+      <Link>Core\StabilizationStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Devices\BootloaderDevice.cs">
+      <Link>Devices\BootloaderDevice.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Devices\CoreDevice.cs">
+      <Link>Devices\CoreDevice.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Devices\SpheroDevice.cs">
+      <Link>Devices\SpheroDevice.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Internal\ByteHelper.cs">
+      <Link>Internal\ByteHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Internal\MathHelper.cs">
+      <Link>Internal\MathHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Internal\StringHelper.cs">
+      <Link>Internal\StringHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Locator\IMU.cs">
+      <Link>Locator\IMU.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Locator\Masks.cs">
+      <Link>Locator\Masks.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Locator\Quaternion.cs">
+      <Link>Locator\Quaternion.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Locator\SensorData.cs">
+      <Link>Locator\SensorData.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Locator\ThreeAxis.cs">
+      <Link>Locator\ThreeAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Locator\TwoAxis.cs">
+      <Link>Locator\TwoAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\BranchOnCollisionMacroCommand.cs">
+      <Link>Macros\Commands\BranchOnCollisionMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\CommentMacroCommand.cs">
+      <Link>Macros\Commands\CommentMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\ConfigureCollisionDetectionMacroCommand.cs">
+      <Link>Macros\Commands\ConfigureCollisionDetectionMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\DelayMacroCommand.cs">
+      <Link>Macros\Commands\DelayMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\EmitMarkerMacroCommand.cs">
+      <Link>Macros\Commands\EmitMarkerMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\EndMacroCommand.cs">
+      <Link>Macros\Commands\EndMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\FadeToLEDOverTimeMacroCommand.cs">
+      <Link>Macros\Commands\FadeToLEDOverTimeMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\GosubMacroCommand.cs">
+      <Link>Macros\Commands\GosubMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\GotoMacroCommand.cs">
+      <Link>Macros\Commands\GotoMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\GoToSleepNowMacroCommand.cs">
+      <Link>Macros\Commands\GoToSleepNowMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\LoopEndMacroCommand.cs">
+      <Link>Macros\Commands\LoopEndMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\LoopStartMacroCommand.cs">
+      <Link>Macros\Commands\LoopStartMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\LoopStartSystemMacroCommand.cs">
+      <Link>Macros\Commands\LoopStartSystemMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\MacroCommand.cs">
+      <Link>Macros\Commands\MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\Roll2MacroCommand.cs">
+      <Link>Macros\Commands\Roll2MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\RollAtSPD1WithSD1MacroCommand.cs">
+      <Link>Macros\Commands\RollAtSPD1WithSD1MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\RollAtSPD2WithSD1MacroCommand.cs">
+      <Link>Macros\Commands\RollAtSPD2WithSD1MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\RollMacroCommand.cs">
+      <Link>Macros\Commands\RollMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\RollWithSD1MacroCommand.cs">
+      <Link>Macros\Commands\RollWithSD1MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\RotateOverSD1MacroCommand.cs">
+      <Link>Macros\Commands\RotateOverSD1MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\RotateOverSD2MacroCommand.cs">
+      <Link>Macros\Commands\RotateOverSD2MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\RotateOverTimeMacroCommand.cs">
+      <Link>Macros\Commands\RotateOverTimeMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SendRawMotorMacroCommand.cs">
+      <Link>Macros\Commands\SendRawMotorMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetBackLEDMacroCommand.cs">
+      <Link>Macros\Commands\SetBackLEDMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetHeadingMacroCommand.cs">
+      <Link>Macros\Commands\SetHeadingMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetRGBLEDMacroCommand.cs">
+      <Link>Macros\Commands\SetRGBLEDMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetRGBLEDWithSD2MacroCommand.cs">
+      <Link>Macros\Commands\SetRGBLEDWithSD2MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetRotationRateMacroCommand.cs">
+      <Link>Macros\Commands\SetRotationRateMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetSD1MacroCommand.cs">
+      <Link>Macros\Commands\SetSD1MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetSD2MacroCommand.cs">
+      <Link>Macros\Commands\SetSD2MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetSPD1MacroCommand.cs">
+      <Link>Macros\Commands\SetSPD1MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetSPD2MacroCommand.cs">
+      <Link>Macros\Commands\SetSPD2MacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetSpeedMacroCommand.cs">
+      <Link>Macros\Commands\SetSpeedMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\SetStabilizationMacroCommand.cs">
+      <Link>Macros\Commands\SetStabilizationMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\StreamEndMacroCommand.cs">
+      <Link>Macros\Commands\StreamEndMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Commands\WaitUntilStoppedMacroCommand.cs">
+      <Link>Macros\Commands\WaitUntilStoppedMacroCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\Macro.cs">
+      <Link>Macros\Macro.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\MacroCommandID.cs">
+      <Link>Macros\MacroCommandID.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\MacroFlags.cs">
+      <Link>Macros\MacroFlags.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\MacroStatus.cs">
+      <Link>Macros\MacroStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Sphero\Macros\MacroType.cs">
+      <Link>Macros\MacroType.cs</Link>
+    </Compile>
+    <Compile Include="Controls\Joystick.xaml.cs">
+      <DependentUpon>Joystick.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Design\projectGuides.guides" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\Joystick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
