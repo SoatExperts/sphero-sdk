@@ -53,6 +53,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="300"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
 
             <ListBox x:Name="SpherosDiscovered" Margin="12">
@@ -63,6 +64,7 @@
                 </ListBox.ItemTemplate>
             </ListBox>
             <Button x:Name="btnConnection" Grid.Row="1" Height="100" Content="Connection" Click="btnConnection_Click"></Button>
+            <Button x:Name="btnRefresh" Grid.Row="2" Height="100" Content="Refresh" Click="btnRefresh_Click"></Button>
         </Grid>
 
         <!--Supprimez les commentaires pour voir une grille d'alignement qui vous aidera à vous assurer que vos contrôles sont

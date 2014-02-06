@@ -9,6 +9,23 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <sphero:Joystick x:Name="joystick" />
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="SpherosDiscovered" Margin="12" Width="300" HorizontalAlignment="Left">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock  Margin="0,20,0,20" FontSize="26" Text="{Binding DisplayName}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1"  Orientation="Horizontal" Margin="12">
+            <Button  x:Name="btnRefresh" Width="150"  Content="Refresh" Click="btnRefresh_Click" />
+            <Button x:Name="btnConnection" Width="150"  Content="Connection" Click="btnConnection_Click" />
+            
+        </StackPanel>
+        
+        
     </Grid>
 </Page>

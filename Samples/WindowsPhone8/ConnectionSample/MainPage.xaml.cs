@@ -70,6 +70,10 @@ namespace ConnectionSample
         }
 
 
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            DiscoverSpheros();
+        }
 
         // Exemple de code pour la conception d'une ApplicationBar localisée
         //private void BuildLocalizedApplicationBar()
