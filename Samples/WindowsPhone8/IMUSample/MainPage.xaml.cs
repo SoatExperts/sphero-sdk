@@ -7,10 +7,10 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using ColorLEDSample.Resources;
+using IMUSample.Resources;
 using Sphero.Communication;
 
-namespace ColorLEDSample
+namespace IMUSample
 {
     public partial class MainPage : PhoneApplicationPage
     {
@@ -64,7 +64,7 @@ namespace ColorLEDSample
                 else
                 {
                     App.CurrentConnection = connection;
-                    NavigationService.Navigate(new Uri("/ChangeColorPage.xaml", UriKind.RelativeOrAbsolute));
+                    NavigationService.Navigate(new Uri("/CalibrationPage.xaml", UriKind.RelativeOrAbsolute));
                 }
             }
         }
