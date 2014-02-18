@@ -323,6 +323,9 @@ namespace Sphero.Devices
         /// </summary>
         public void SetDataStreaming(int N, int M, uint mask, uint mask2)
         {
+            if (M > 1)
+                throw new NotImplementedException("Not implemented for M > 1");
+
             byte[] nArray = ByteHelper.IntegerToBytes(N);
             byte[] mArray = ByteHelper.IntegerToBytes(M);
 
