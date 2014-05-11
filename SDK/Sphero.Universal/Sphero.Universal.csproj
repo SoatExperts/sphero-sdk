@@ -34,13 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <Page Include="Controls\Joystick.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
     <TargetPlatform Include="Windows, Version=8.1" />
   </ItemGroup>
@@ -272,9 +265,6 @@
     </Compile>
     <Compile Include="..\Sphero\Macros\MacroType.cs">
       <Link>Macros\MacroType.cs</Link>
-    </Compile>
-    <Compile Include="Controls\Joystick.xaml.cs">
-      <DependentUpon>Joystick.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
