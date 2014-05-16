@@ -30,18 +30,29 @@ namespace Sphero.Communication
             {
 #if NETFX_CORE
 
-                DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAsync(RfcommDeviceService.GetDeviceSelector(RfcommServiceId.SerialPort));
-                
+                DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAsync(RfcommDeviceService.GetDeviceSelector(RfcommServiceId.FromUuid(new Guid(SERVICE_ID))));
 
                 if (deviceCollection == null)
                     return null;
 
+                IEnumerable<DeviceInformation> spherodevices = deviceCollection.Where(d => d.Name.ToUpper().Contains("SPHERO"));
+
                 List<SpheroInformation> informations = new List<SpheroInformation>();
 
-                foreach (DeviceInformation device in deviceCollection)
+                foreach (DeviceInformation device in spherodevices)
                 {
-                    RfcommDeviceService service = await RfcommDeviceService.FromIdAsync(device.Id);
-                    informations.Add(new SpheroInformation(device.Name, service.ConnectionHostName));
+                    try
+                    {
+                        RfcommDeviceService service = await RfcommDeviceService.FromIdAsync(device.Id);
+                        informations.Add(new SpheroInformation(device.Name, service.ConnectionHostName));
+                    }
+                    catch (Exception ex)
+                    {
+                        if (ex.HResult == -2147023729)
+                        {
+                            throw new BluetoothDeactivatedException(ex);
+                        }
+                    }
                 }
 
                 return informations;

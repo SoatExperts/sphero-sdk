@@ -23,10 +23,11 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <DeviceCapability Name="proximity" />
-<wb:DeviceCapability Name="bluetooth.rfcomm">
+    <wb:DeviceCapability Name="bluetooth.rfcomm">
       <wb:Device Id="any">
         <wb:Function Type="serviceId:00001101-0000-1000-8000-00805F9B34FB" />
       </wb:Device>
     </wb:DeviceCapability>
+  
   </Capabilities>
 </Package>
